@@ -17,7 +17,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 */
-/*
+
 Route::post('login', 'UserController@login');
     //Route::post('register', 'UserController@register');
     Route::get('/products', 'ProductController@index');
@@ -32,7 +32,8 @@ Route::post('login', 'UserController@login');
         Route::resource('/orders', 'OrderController');
         Route::resource('/products', 'ProductController')->except(['index','show']);
     });
-*/
+
+/*
 Route::group([
     'prefix' => 'auth'
 ], function () {
@@ -53,3 +54,4 @@ Route::group([
         Route::resource('/products', 'ProductController')->except(['index','show']);
     });
 });
+*/
