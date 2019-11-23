@@ -40,14 +40,14 @@ class ProductController extends Controller
         $product = Product::create([
          'name' => $request->name,
          'description' => $request->description,
-         'variations' => $request->variations
-                    ]);
+         'variations' => json_encode($request->variations)
+        ]);
 
         return response()->json([
-                        'status' => (bool) $product,
-                        'data'   => $product,
-                        'message' => $product ? 'Product Created!' : 'Error Creating Product'
-                    ]);
+            'status' => (bool) $product,
+            'data'   => $product,
+            'message' => $product ? 'Product Created!' : 'Error Creating Product'
+         ]);
 
     }
 
@@ -85,13 +85,13 @@ class ProductController extends Controller
     {
         //
         $status = $product->update(
-                        $request->only(['name', 'description', 'variations'])
-                    );
+            $request->only(['name', 'description', 'variations'])
+                );
 
-                    return response()->json([
-                        'status' => $status,
-                        'message' => $status ? 'Product Updated!' : 'Error Updating Product'
-                    ]);
+        return response()->json([
+             'status' => $status,
+             'message' => $status ? 'Product Updated!' : 'Error Updating Product'
+        ]);
     }
 
     /**
@@ -105,9 +105,9 @@ class ProductController extends Controller
         //
         $status = $product->delete();
 
-                    return response()->json([
-                        'status' => $status,
-                        'message' => $status ? 'Product Deleted!' : 'Error Deleting Product'
-                    ]);
+        return response()->json([
+            'status' => $status,
+                'message' => $status ? 'Product Deleted!' : 'Error Deleting Product'
+        ]);
     }
 }
