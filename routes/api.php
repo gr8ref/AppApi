@@ -30,7 +30,7 @@ Route::post('login', 'UserController@login');
         Route::get('users/{user}/orders','UserController@showOrders');
         Route::patch('orders/{order}/deliver','OrderController@deliverOrder');
         Route::resource('/orders', 'OrderController');
-        Route::resource('/products', 'ProductController')->except(['index','show']);
+        Route::put('/products', 'ProductController@store');
     });
 
 /*
