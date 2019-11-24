@@ -5,7 +5,7 @@ $ composer install</pre></div>
 <div class="highlight highlight-source-shell"><pre>$ php artisan key:generate
 $ php artisan migrate --seed
 $ php artisan passport:install</pre></div>
-<p>To check API use</p>
+<p>Show <strong>API</strong> list</p>
 <div class="highlight highlight-source-shell"><pre>
 $ php artisan route:list</pre></div>
 <p>Then serve your project with this flag to let any device from your local network to access your project.</p>
