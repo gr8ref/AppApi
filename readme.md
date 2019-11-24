@@ -3,6 +3,7 @@
 $ composer install</pre></div>
 <p>Then rename the <strong>.env.example</strong> file to <strong>.env</strong>, open it and add your database name, your username and password, then run these commands to generate the key, create tables and insert some data:</p>
 <div class="highlight highlight-source-shell"><pre>$ php artisan key:generate
-$ php artisan migrate --seed</pre></div>
+$ php artisan migrate --seed
+$ php artisan passport:install</pre></div>
 <p>Then serve your project with this flag to let any device from your local network to access your project.</p>
 <div class="highlight highlight-source-shell"><pre>$ php artisan serve --host=0.0.0.0</pre></div>
