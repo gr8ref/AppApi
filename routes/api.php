@@ -23,7 +23,7 @@ Route::post('login', 'UserController@login');
     Route::get('/products', 'ProductController@index');
     Route::get('/products/{product}', 'ProductController@show');
 
-    Route::group(['middleware' => 'auth:api'], function(){
+    Route::group(['middleware' => 'auth:api',], function(){
         Route::get('/users','UserController@index');
         Route::get('users/{user}','UserController@show');
         Route::patch('users/{user}','UserController@update');
